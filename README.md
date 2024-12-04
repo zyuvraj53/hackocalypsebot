@@ -1,7 +1,7 @@
 # 🧟‍♂️ Hackocalypse: The LLM Survival Guide
 #### *Presented by MLSA KIIT - Where AI Meets the Apocalypse*
 
-![MLSA KIIT Banner](https://imgur.com/a/JzceXJ3)
+![MLSA KIIT Banner](https://avatars.githubusercontent.com/u/79008924?s=280&v=4)
 
 > "In a world overrun by the undead, your AI might be humanity's last hope..."
 
