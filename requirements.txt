@@ -1,0 +1,6 @@
+groq
+faiss-cpu
+streamlit
+python-dotenv
+requests
+numpy
