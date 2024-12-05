@@ -1,4 +1,4 @@
-*City Name: Crimson Heights*  
+# City Name: Crimson Heights  
 Map Description: A sprawling urban area with high-rise buildings, narrow alleys, and an extensive subway network. The city center features a deserted mall, while the outskirts host a network of parks and industrial zones. Easter Egg: Look for the graffiti on the subway walls that hints at a cure for the outbreak.  
 Scenario Type: Urban Evacuation  
 Zombie Outbreak: Infection started in the central hospital and spread outward. Outbreak zones shift every 10 minutes, pushing survivors into chokepoints.  
