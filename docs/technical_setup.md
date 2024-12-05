@@ -43,3 +43,24 @@ An API key is a unique code used to authenticate requests when accessing Groq's 
 ---
 
 Now you’re ready to use Groq's API! 🎉
+
+---
+
+## **Test Your Setup**
+
+To make sure everything is set up correctly, you can run the following command to verify that Groq’s Python client is installed:
+```python
+python -c "import groq; print(groq.__version__)"
+```
+If you see the version number printed, you’re all set to start coding!
+
+---
+
+## **Launch the Web Interface**
+
+Run the application using Streamlit:
+```python
+streamlit run src/app.py
+```
+
+---
