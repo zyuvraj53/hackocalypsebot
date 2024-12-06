@@ -51,7 +51,7 @@ RAG systems excel at:
 - Convert text data (e.g., map descriptions) into embeddings using tools like sentence-transformers.
 
 Example:
-python
+```python
 from sentence_transformers import SentenceTransformer
 import faiss
 import numpy as np
@@ -67,6 +67,7 @@ embeddings = model.encode(data)
 dimension = embeddings.shape[1]
 index = faiss.IndexFlatL2(dimension)
 index.add(np.array(embeddings))
+```
 
 ---
 
@@ -75,7 +76,7 @@ index.add(np.array(embeddings))
 - Retrieve similar data points using vector similarity search.
 
 Example:
-python
+```python
 query = "Find safe zones"
 query_embedding = model.encode([query])
 distances, indices = index.search(np.array(query_embedding), k=1)
@@ -83,6 +84,7 @@ distances, indices = index.search(np.array(query_embedding), k=1)
 ## Retrieve relevant information
 relevant_info = [data[i] for i in indices[0]]
 print(relevant_info)
+```
 
 ---
 
@@ -90,7 +92,7 @@ print(relevant_info)
 - Pass the retrieved context to your LLM (e.g., Groq API) to generate a final response.
 
 Example:
-python
+```python
 from groq import GroqClient
 
 client = GroqClient(api_key="your-api-key")
@@ -100,6 +102,7 @@ query = "Where should I go?"
 ## Generate response
 response = client.generate(prompt=f"{context}\n\n{query}")
 print(response)
+```
 
 ---
 
