@@ -60,7 +60,7 @@ If you see the version number printed, you’re all set to start coding!
 
 Run the application using Streamlit:
 ```python
-streamlit run src/app.py
+streamlit run src/app/app.py
 ```
 
 ---
