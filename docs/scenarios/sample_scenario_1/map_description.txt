@@ -1,37 +1,47 @@
-City Name: Crimson Heights  
-Map Description: A sprawling urban area with high-rise buildings, narrow alleys, and an extensive subway network. The city center features a deserted mall, while the outskirts host a network of parks and industrial zones. Easter Egg: Look for the graffiti on the subway walls that hints at a cure for the outbreak.  
-Scenario Type: Urban Evacuation  
-Zombie Outbreak: Infection started in the central hospital and spread outward. Outbreak zones shift every 10 minutes, pushing survivors into chokepoints.  
-Resource Distribution: Medical kits in the hospital, food in the mall, and weapons scattered in police stations. Supplies are limited.  
-Weather Hazards: Sudden downpours reduce visibility and create slippery surfaces, increasing fall damage.  
-Story Mode: The protagonist, a former subway operator, must navigate the tunnels to rescue their family stuck in the mall. Players uncover hidden lore about the outbreak through diary pages scattered in safe zones.
+Map Layout
 
----
+Nodes (Locations)
+- Node A: City Hall
+- Node B: Central Hospital
+- Node C: Fire Station
+- Node D: Subway Entrance
+- Node E: Apartment Complex
+- Node F: School Gymnasium (Safe Zone)
+- Node G: Library Basement (Safe Zone)
+- Node H: Major Intersection 1
+- Node I: Major Intersection 2
+- Node J: Park Area
+- Node K: Campsite
+- Node L: Cliffside Lookout
+- Node M: Small Residential Block
+- Node N: Riverside Path
+- Node O: Collapsed Bridge (Obstacle)
 
-City Name: Ashfield  
-Map Description: A coastal city with a mix of urban sprawl and suburban homes. The city features a dockyard, a lighthouse, and a heavily barricaded military base. Easter Egg: The lighthouse beams a secret Morse code message with hints for hidden resources.  
-Scenario Type: Resource Management  
-Zombie Outbreak: Outbreak concentrated near the docks, with hordes gradually migrating inland. Safe zones are shrinking due to overcrowding.  
-Resource Distribution: High-value resources in the military base, with scavenger-grade supplies in suburban homes. Risk vs reward is critical as zombies are more aggressive near better resources.  
-Weather Hazards: Dense fog rolls in at night, making navigation and visibility extremely challenging.  
-Story Mode: Survivors receive fragmented radio signals guiding them to the lighthouse, where a hidden escape boat awaits.
+Edges (Connections Between Nodes)
+- A ↔ B: Main Street
+- B ↔ C: First Avenue
+- C ↔ D: Broadway Street
+- A ↔ H: Secondary Road
+- H ↔ I: Connector Road
+- H ↔ F: Pathway to Gymnasium
+- I ↔ G: Pathway to Library
+- D ↔ E: Residential Lane
+- B ↔ J: Road to Park Area
+- J ↔ K: Trail to Campsite
+- K ↔ L: Path to Cliffside Lookout
+- E ↔ M: Lane to Residential Block
+- M ↔ N: Riverside Pathway
+- F ↔ G: Evacuation Route
+- E ↔ O: Collapsed Bridge (Removed Connection)
 
----
+Special Attributes
 
-City Name: Ironclad Ridge  
-Map Description: A mountain city built around a massive dam, with steep roads, cable cars, and cliffside neighborhoods. The dam controls the city’s power and water supply. Easter Egg: Activating the dam’s generator triggers an electrical surge that temporarily stuns zombies.  
-Scenario Type: Weather Hazards  
-Zombie Outbreak: Infection spreads from the lower districts, forcing survivors to ascend to higher ground. Zombies can climb, making safe zones temporary.  
-Resource Distribution: Tools in the industrial zones, medical supplies in mountain clinics, and food caches in hidden caves.  
-Weather Hazards: Frequent thunderstorms disrupt electronics and cause landslides, altering paths.  
-Story Mode: Players must repair the dam’s controls to prevent catastrophic flooding while avoiding hordes.
+Safe Zones
+- Node F: School Gymnasium
+- Node G: Library Basement
 
----
+Obstacle
+- Node O: Collapsed Bridge (Connection Removed)
 
-City Name: Greenhaven  
-Map Description: A picturesque suburban area turned battleground, featuring schools, playgrounds, and a botanical garden. The garden's greenhouse is rumored to house a key to reversing the infection. Easter Egg: Hidden QR codes in school lockers reveal additional backstory.  
-Scenario Type: Zombie Patterns  
-Zombie Outbreak: Zombies emerge in waves from the botanical garden. Safe zones shift as players fortify positions.  
-Resource Distribution: Classrooms and playgrounds hold basic supplies, but the greenhouse has specialized antidotes guarded by elite zombies.  
-Weather Hazards: Intense heatwaves drain stamina faster, forcing players to find shade or water frequently.  
-Story Mode: A teacher leads their students to safety, unraveling the outbreak’s origins through puzzles scattered across the map.
+High-Density Areas
+- Nodes A (City Hall), B (Central Hospital), C (Fire Station), and surrounding intersections.
