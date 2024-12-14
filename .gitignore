@@ -8,3 +8,7 @@ venv/
 .idea/
 .vscode/
 *.log
+monsters_response.json
+resources_response.json
+status_response.json
+survivors_response.json
