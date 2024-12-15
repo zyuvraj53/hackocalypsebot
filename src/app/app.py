@@ -1,4 +1,8 @@
-from flask import Flask, jsonify, request
+import os
+import pandas as pd
+import folium
+from folium.plugins import MarkerCluster
+from flask import Flask, jsonify, request, send_file
 import requests
 import json
 
@@ -54,7 +58,75 @@ def get_survivors():
     else:
         return jsonify({"error": "Failed to fetch survivors"}), 500
 
+# Route to survivor's map
+@app.route('/generate_map', methods=['GET'])
+def generate_map():
 
+    if not os.path.exists('static'):
+        os.makedirs('static')  # Create the 'static' folder if it doesn't exist
+
+    # MLSA API to fetch survivor data
+    api_url = "https://api.mlsakiit.com/survivors" 
+    try:
+        response = requests.get(api_url)
+        response.raise_for_status()
+        data = pd.DataFrame(response.json())
+    except requests.exceptions.RequestException as e:
+        return jsonify({"error": f"Failed to fetch data: {str(e)}"}), 500
+
+    # latitude & Longitude
+    mean_lat = data['lat'].mean()
+    mean_lon = data['lon'].mean()
+
+    # Initialize map
+    survivors_map = folium.Map(
+        location=[mean_lat, mean_lon], 
+        zoom_start=12,
+        control_scale=True
+    )
+
+    folium.TileLayer(
+    tiles='http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png',
+    attr='Stamen Toner',
+    name='Post-apocalyptic Toner',
+    control=True
+).add_to(survivors_map)
+
+    # Add markers to the map
+    marker_cluster = MarkerCluster().add_to(survivors_map)
+    for _, row in data.iterrows():
+        folium.Marker(
+            location=[row['lat'], row['lon']],
+            popup=f"Survivor ID: {row['survivor_id']}<br>District: {row['district']}",
+            icon=folium.Icon(color="blue")
+        ).add_to(marker_cluster)
+
+    # Save the map to a temporary file
+    html_file_path = "static/survivors_map.html"
+    survivors_map.save(html_file_path)
+
+    # Return the file as an API response
+    return send_file(html_file_path)
+
+@app.route('/', methods=['GET'])
+def home():
+    return '''
+        <h1>Welcome to the Flask App</h1>
+        <p>Available routes:</p>
+        <ul>
+            <li><a href="/api/monsters">/api/monsters</a> - Get monster data</li>
+            <li><a href="/api/resources">/api/resources</a> - Get resource data</li>
+            <li><a href="/api/status">/api/status</a> - Get status data</li>
+            <li><a href="/api/survivors">/api/survivors</a> - Get survivor data</li>
+            <li><a href="/generate_map">/generate_map</a> - Generate survivor map</li>
+        </ul>
+    '''
+
+
+# Check server health
+@app.route('/health', methods=['GET'])
+def health():
+    return jsonify({"status": "Server is running"}), 200
 
 @app.before_request
 def before_request():
