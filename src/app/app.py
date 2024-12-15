@@ -32,7 +32,7 @@ survivors_response = requests.get(survivors_url)
     #data = resources_response.json()
 
     ## Save JSON response to a file
-    #with open("resources_response.json", "w") as file:
+i   #with open("resources_response.json", "w") as file:
         #json.dump(data, file, indent=4)  # Pretty formatting with indent
     #print("Response saved to 'resources_response.json'")
 #else:
