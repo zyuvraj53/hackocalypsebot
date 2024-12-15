@@ -62,6 +62,7 @@ def get_survivors():
 @app.route('/generate_map', methods=['GET'])
 def generate_map():
 
+
     if not os.path.exists('static'):
         os.makedirs('static')  # Create the 'static' folder if it doesn't exist
 
@@ -141,3 +142,41 @@ def after_request(response):
 
 if __name__ == '__main__':
     app.run(debug=True)
+    =======
+##### Resources
+    
+#if resources_response.status_code == 200:
+    ## Convert response to JSON
+    #data = resources_response.json()
+
+    ## Save JSON response to a file
+   #with open("resources_response.json", "w") as file:
+        #json.dump(data, file, indent=4)  # Pretty formatting with indent
+    #print("Response saved to 'resources_response.json'")
+#else:
+    #print("Request failed with status code:", response.status_code)
+    
+#### Status
+#if status_response.status_code == 200:
+    ## Convert response to JSON
+    #data = status_response.json()
+
+    ## Save JSON response to a file
+    #with open("status_response.json", "w") as file:
+        #json.dump(data, file, indent=4)  # Pretty formatting with indent
+    #print("Response saved to 'status_response.json'")
+#else:
+    #print("Request failed with status code:", status_response.status_code)
+    
+#### Survivors
+#if survivors_response.status_code == 200:
+    # Convert response to JSON
+   # data = survivors_response.json()
+
+    # Save JSON response to a file
+   # with open("survivors_response.json", "w") as file:
+        #json.dump(data, file, indent=4)  # Pretty formatting with indent
+    #print("Response saved to 'survivors_response.json'")
+#else:
+    #print("Request failed with status code:", survivors_response.status_code)
+
